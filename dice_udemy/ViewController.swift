@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var randomDiceIndex1 : Int = 0
     var randomDiceIndex2 : Int = 0
     
+    let diceArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
+    
     @IBOutlet weak var rollResultsLabel: UILabel!
     
     @IBOutlet weak var diceImageView1: UIImageView!
@@ -21,55 +23,23 @@ class ViewController: UIViewController {
  
     
     @IBAction func rollButonPressed(_ sender: UIButton) {
-        randomDiceIndex1 = Int(arc4random_uniform(6))+1
-        randomDiceIndex2 = Int(arc4random_uniform(6))+1
         
-        //dice1 image change based on roll
-        if(randomDiceIndex1 == 1){
-            diceImageView1.image = #imageLiteral(resourceName: "dice1")
-        }
-        if(randomDiceIndex1 == 2){
-            diceImageView1.image = #imageLiteral(resourceName: "dice2")
-        }
-        if(randomDiceIndex1 == 3) {
-            diceImageView1.image = #imageLiteral(resourceName: "dice3")
-        }
-        if(randomDiceIndex1 == 4) {
-            diceImageView1.image = #imageLiteral(resourceName: "dice4")
-        }
-        if(randomDiceIndex1 == 5) {
-            diceImageView1.image = #imageLiteral(resourceName: "dice5")
-        }
-        if(randomDiceIndex1 == 6) {
-            diceImageView1.image = #imageLiteral(resourceName: "dice6")
-        }
+        randomDiceIndex1 = Int(arc4random_uniform(6))
+        randomDiceIndex2 = Int(arc4random_uniform(6))
         
-        //dice 2
-        if(randomDiceIndex2 == 1){
-            diceImageView2.image = #imageLiteral(resourceName: "dice1")
-        }
-        if(randomDiceIndex2 == 2){
-            diceImageView2.image = #imageLiteral(resourceName: "dice2")
-        }
-        if(randomDiceIndex2 == 3) {
-            diceImageView2.image = #imageLiteral(resourceName: "dice3")
-        }
-        if(randomDiceIndex2 == 4) {
-            diceImageView2.image = #imageLiteral(resourceName: "dice4")
-        }
-        if(randomDiceIndex2 == 5) {
-            diceImageView2.image = #imageLiteral(resourceName: "dice5")
-        }
-        if(randomDiceIndex2 == 6) {
-            diceImageView2.image = #imageLiteral(resourceName: "dice6")
-        }
+        diceImageView1.image = UIImage(named: diceArray[randomDiceIndex1])
         
-        let rollResults = randomDiceIndex1 + randomDiceIndex2
+        diceImageView2.image = UIImage(named: diceArray[randomDiceIndex2])
+        
+        let rollResults = randomDiceIndex1 + randomDiceIndex2 + 2
         
         rollResultsLabel.text = String(rollResults)
+        
+        print(randomDiceIndex2)
+        print(randomDiceIndex1)
+    
     }
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
