@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var randomDiceIndex1 : Int = 0
     var randomDiceIndex2 : Int = 0
     
+    @IBOutlet weak var rollResultsLabel: UILabel!
+    
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
         randomDiceIndex1 = Int(arc4random_uniform(6))+1
         randomDiceIndex2 = Int(arc4random_uniform(6))+1
         
+        //dice1 image change based on roll
         if(randomDiceIndex1 == 1){
             diceImageView1.image = #imageLiteral(resourceName: "dice1")
         }
@@ -37,6 +40,7 @@ class ViewController: UIViewController {
         if(randomDiceIndex1 == 6) {
             diceImageView1.image = #imageLiteral(resourceName: "dice6")
         }
+        
         //dice 2
         if(randomDiceIndex2 == 1){
             diceImageView2.image = #imageLiteral(resourceName: "dice1")
@@ -57,7 +61,9 @@ class ViewController: UIViewController {
             diceImageView2.image = #imageLiteral(resourceName: "dice6")
         }
         
-        print(randomDiceIndex1)
+        var rollResults = randomDiceIndex1 + randomDiceIndex2
+        
+        rollResultsLabel.text = String(rollResults)
     }
     
     override func viewDidLoad() {

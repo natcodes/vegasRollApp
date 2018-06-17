@@ -51,6 +51,14 @@
                                     <action selector="rollButonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5J-QR-bhT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's Roll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-aS-A3L">
+                                <rect key="frame" x="117" y="202" width="140" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99787833120000002" green="0.99787833120000002" blue="0.99787833120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -59,6 +67,8 @@
                         <outlet property="DiceImageView1" destination="3fu-NQ-Xfo" id="Nhk-6T-eVy"/>
                         <outlet property="DiceImageView2" destination="lrc-g1-xGc" id="kxv-QZ-Wrn"/>
                         <outlet property="diceImageView1" destination="3fu-NQ-Xfo" id="jOI-aD-6O8"/>
+                        <outlet property="diceImageView2" destination="lrc-g1-xGc" id="NUV-Dd-IS9"/>
+                        <outlet property="rollResultsLabel" destination="fLk-aS-A3L" id="pt4-W9-wrL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
