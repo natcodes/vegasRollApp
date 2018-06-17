@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    @IBOutlet weak var buttonCustom: UIButton!
+ 
+    
     @IBAction func rollButonPressed(_ sender: UIButton) {
         randomDiceIndex1 = Int(arc4random_uniform(6))+1
         randomDiceIndex2 = Int(arc4random_uniform(6))+1
@@ -61,10 +64,12 @@ class ViewController: UIViewController {
             diceImageView2.image = #imageLiteral(resourceName: "dice6")
         }
         
-        var rollResults = randomDiceIndex1 + randomDiceIndex2
+        let rollResults = randomDiceIndex1 + randomDiceIndex2
         
         rollResultsLabel.text = String(rollResults)
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +80,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    
-    
     
 }
 
